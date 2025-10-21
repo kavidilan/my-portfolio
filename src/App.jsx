@@ -6,6 +6,7 @@ import echanneling from './assets/echanneling.jpg';
 import CultureKart from './assets/CultureKart.png';
 import Top5AI from './assets/Top5AI.png';
 import spotify from './assets/spotify.png';
+import cyber from './assets/cyber.jpg';
 // --- Particle Animation Component ---
 // This creates the animated background for the hero section
 const ParticleCanvas = () => {
@@ -466,11 +467,11 @@ const SkillsSection = () => {
     description: "How Spotify is leveraging AI responsibly in collaboration with major music labels to reshape the music industry.",
     image: spotify,
   },
-  {
-    title: "Building a Portfolio Website from Scratch",
-    url: "https://medium.com/@yourusername/building-a-portfolio",
-    description: "Step-by-step guide for creating a modern developer portfolio.",
-    image: 'https://via.placeholder.com/400x200.png?text=Portfolio+Guide'
+   {
+    title: "AI-Powered Cyberattacks in 2025: Are You Safe?",
+    url: "https://medium.com/@kavishkadilshan0626/ai-powered-cyberattacks-in-2025-are-you-safe-b0b39bc889f6",
+    description: "An analysis of AI-driven cyber threats in 2025 and what individuals and organizations can do to stay protected.",
+    image: cyber,
   }
 ];
 
