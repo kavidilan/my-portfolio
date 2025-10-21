@@ -416,7 +416,6 @@ return (
             <div
               className={`md:col-span-7 z-10 ${index % 2 === 0 ? 'md:text-left' : 'md:text-right'}`}
             >
-              <p className="text-indigo-400 mb-1 tracking-wide text-sm">Featured Project</p>
               <h3 className="text-2xl md:text-3xl font-bold mb-2 text-white">
                 {project.title}
               </h3>
