@@ -4,6 +4,8 @@ import myimage from './assets/myimage.jpg';
 import harvestlanka from './assets/harvestlanka.png';
 import echanneling from './assets/echanneling.jpg';
 import CultureKart from './assets/CultureKart.png';
+import Top5AI from './assets/Top5AI.png';
+import spotify from './assets/spotify.png';
 // --- Particle Animation Component ---
 // This creates the animated background for the hero section
 const ParticleCanvas = () => {
@@ -449,25 +451,65 @@ return (
 
 // Section: Skills
 const SkillsSection = () => {
-    const skills = ["React", "Node.js", "Tailwind CSS", "HTML", "CSS", "Java","JavaScript","Git & GitHub", "Figma","Jira", "Power BI "];
-    
+    const skills = ["React", "Node.js", "Tailwind CSS", "HTML", "CSS", "Java","JavaScript","Git & GitHub", "Figma","Jira", "Power BI"];
+
+   const blogs = [
+  {
+    title: "Top 5 AI Tools for Developers in 2025",
+    url: "https://medium.com/@kavishkadilshan0626/top-5-ai-tools-for-developers-in-2025-96b14c0787a1",
+    description: "Explore the top AI tools every developer should know in 2025, from GitHub Copilot to Codeium.",
+    image: Top5AI,
+  },
+  {
+    title: "Spotify’s Responsible AI Initiative: Where Music Meets Ethics",
+    url: "https://medium.com/@kavishkadilshan0626/spotifys-responsible-ai-initiative-where-music-meets-ethics-dd94c704ad66",
+    description: "How Spotify is leveraging AI responsibly in collaboration with major music labels to reshape the music industry.",
+    image: spotify,
+  },
+  {
+    title: "Building a Portfolio Website from Scratch",
+    url: "https://medium.com/@yourusername/building-a-portfolio",
+    description: "Step-by-step guide for creating a modern developer portfolio.",
+    image: 'https://via.placeholder.com/400x200.png?text=Portfolio+Guide'
+  }
+];
+
     return (
         <section id="skills" className="py-24 bg-gray-900">
             <div className="container mx-auto px-6">
                 <h2 className="text-4xl font-bold text-center mb-16 text-white fade-in">
-                    <span className="text-indigo-400">03.</span> My Skills
+                    <span className="text-indigo-400">03.</span> My Skills & Blogs
                 </h2>
-                <div className="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 text-center fade-in">
+
+                {/* Skills Grid */}
+                <div className="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 text-center fade-in mb-16">
                     {skills.map(skill => (
                         <div key={skill} className="bg-gray-800 p-4 rounded-lg shadow-md hover:bg-gray-700 hover:-translate-y-1 transition-all duration-300">
                             <p className="font-semibold text-gray-300">{skill}</p>
                         </div>
                     ))}
                 </div>
+
+                {/* Blog Cards */}
+                <div className="max-w-6xl mx-auto fade-in">
+                    <h3 className="text-2xl font-bold mb-8 text-white text-center">My Blog Posts</h3>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {blogs.map((blog, index) => (
+                            <a key={index} href={blog.url} target="_blank" rel="noopener noreferrer" className="group block bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-2">
+                                <img src={blog.image} alt={blog.title} className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
+                                <div className="p-5">
+                                    <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-indigo-400">{blog.title}</h4>
+                                    <p className="text-gray-400 text-sm">{blog.description}</p>
+                                </div>
+                            </a>
+                        ))}
+                    </div>
+                </div>
             </div>
         </section>
     );
 };
+
 
 // Section: Contact
 const ContactSection = () => {
