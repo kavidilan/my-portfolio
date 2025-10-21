@@ -550,16 +550,29 @@ const ContactSection = () => {
 const Footer = ({ onNavClick }) => (
     <footer className="text-center py-8 px-4">
         <div className="flex justify-center space-x-6 mb-4">
-            <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-indigo-400 transition-colors">
+            <a 
+                href="https://github.com/kavidilan" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-gray-400 hover:text-indigo-400 transition-colors"
+            >
                 <Github size={24} />
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-indigo-400 transition-colors">
+            <a 
+                href="https://www.linkedin.com/in/kavishka-dilshan626/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-gray-400 hover:text-indigo-400 transition-colors"
+            >
                 <Linkedin size={24} />
             </a>
-            <a href="mailto:johndoe@example.com" className="text-gray-400 hover:text-indigo-400 transition-colors">
+            <a 
+                href="mailto:kavishkadilshan0626@gmail.com" 
+                className="text-gray-400 hover:text-indigo-400 transition-colors"
+            >
                 <Mail size={24} />
             </a>
         </div>
-        
     </footer>
 );
+
