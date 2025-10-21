@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Mail, Linkedin, Github, Menu, X, Briefcase, User, Code, Star, ArrowRight } from 'lucide-react';
-import myimage from './assets/myimage.png';
-
+import myimage from './assets/myimage.jpg';
+import harvestlanka from './assets/harvestlanka.png';
+import echanneling from './assets/echanneling.jpg';
+import CultureKart from './assets/CultureKart.png';
 // --- Particle Animation Component ---
 // This creates the animated background for the hero section
 const ParticleCanvas = () => {
@@ -359,7 +361,7 @@ const ProjectsSection = () => {
          "title": "Harvest Lanka – Digital Marketplace Management System",
          "description": "A web application enabling farmers to connect with shop owners and sell crops directly without intermediaries. Built as an ITP project in 2025 using the MERN stack.",
          "tags": ["React.js", "Node.js", "MongoDB", "Tailwind CSS", "MERN Stack", "Jira"],
-         "imageUrl": "/images/harvest.jpeg",
+         "imageUrl": harvestlanka,
          "liveUrl": "#",
          "codeUrl": "https://github.com/kavidilan/Digital-Marketplace-Havest-Lanka"
   },
@@ -368,61 +370,86 @@ const ProjectsSection = () => {
            "title": "Online e-Channeling System (Project - 2024)",
            "description": "Developed a web application that allows patients to book appointments with doctors online, manage schedules, and receive  real-time notifications. Implemented user authentication, role-based access (admin, doctor, patient), and responsive UI for better     accessibility.",
            "tags": ["Java", "HTML", "CSS", "GitHub"],
-           "imageUrl": "https://placehold.co/600x400/374151/FFFFFF?text=e-Channeling+System",
+           "imageUrl": echanneling,
            "liveUrl": "#",
            "codeUrl": "https://github.com/kavidilan/Online-echanneling-system"
  },
         {
-            title: "Portfolio v2",
-            description: "The very website you are looking at. A responsive personal portfolio built with React and Tailwind CSS, featuring smooth animations.",
-            tags: ["React", "Tailwind CSS", "Framer Motion"],
-            imageUrl: "https://placehold.co/600x400/4B5563/FFFFFF?text=Portfolio",
-            liveUrl: "#",
-            codeUrl: "#"
-        }
-    ];
+         "title": "CultureKart – (Project - 2025)",
+         "description": "A collaborative Kanban-style project management app built with React. Users can create boards, lists, and cards to  organize tasks and track progress in real-time.",
+         "tags": ["React", "GitHub", "Kanban", "Project Management"],
+         "imageUrl": CultureKart,
+         "liveUrl": "#",
+         "codeUrl": "https://github.com/kavidilan/CultureKart"
+}
 
-    return (
-        <section id="projects" className="py-24 bg-gray-900/50">
-            <div className="container mx-auto px-6">
-                <h2 className="text-4xl font-bold text-center mb-16 text-white fade-in">
-                    <span className="text-indigo-400">02.</span> Some Things I've Built
-                </h2>
-                <div className="grid md:grid-cols-1 lg:grid-cols-1 gap-12">
-                    {projects.map((project, index) => (
-                        <div key={index} className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center fade-in">
-                            <div className={`relative md:col-span-7 rounded-lg overflow-hidden group ${index % 2 === 0 ? 'md:order-1' : 'md:order-2'}`}>
-                                <img src={project.imageUrl} alt={project.title} className="w-full h-full object-cover rounded-lg"/>
-                                <div className="absolute inset-0 bg-indigo-900/60 group-hover:bg-transparent transition-all duration-300"></div>
-                            </div>
-                            <div className={`md:col-span-5 z-10 ${index % 2 === 0 ? 'md:order-2 md:text-right' : 'md:order-1 md:text-left'}`}>
-                                <p className="text-indigo-400 mb-2">Featured Project</p>
-                                <h3 className="text-3xl font-bold mb-4 text-white hover:text-indigo-400 transition-colors"><a href={project.liveUrl} target="_blank" rel="noopener noreferrer">{project.title}</a></h3>
-                                <div className="bg-gray-800 p-6 rounded-md shadow-lg mb-4">
-                                    <p className="text-gray-400">{project.description}</p>
-                                </div>
-                                <div className={`flex flex-wrap gap-3 mb-4 ${index % 2 === 0 ? 'md:justify-end' : 'md:justify-start'}`}>
-                                    {project.tags.map(tag => (
-                                        <span key={tag} className="text-gray-400 text-sm">{tag}</span>
-                                    ))}
-                                </div>
-                                <div className={`flex items-center gap-4 ${index % 2 === 0 ? 'md:justify-end' : 'md:justify-start'}`}>
-                                    <a href={project.codeUrl} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-indigo-400 transition-colors"><Github size={24}/></a>
-                                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-indigo-400 transition-colors"><ArrowRight size={24}/></a>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+    ];
+return (
+  <section id="projects" className="py-24 bg-gray-900/50">
+    <div className="container mx-auto px-6">
+      <h2 className="text-4xl font-bold text-center mb-16 text-white fade-in">
+        <span className="text-indigo-400">02.</span> Some Things I've Built
+      </h2>
+      <div className="grid md:grid-cols-1 lg:grid-cols-1 gap-12">
+        {projects.map((project, index) => (
+          <div key={index} className="grid grid-cols-1 md:grid-cols-12 items-center gap-4 fade-in">
+
+            {/* Project Image Container */}
+            <div
+              className={`relative md:col-span-5 flex justify-center ${index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'}`}
+            >
+              <div className="relative w-72 h-72 group">
+                <div className="absolute inset-0 bg-indigo-600 rounded-lg transform transition duration-500 group-hover:rotate-6 group-hover:scale-105"></div>
+                <div className="absolute inset-0 border-2 border-indigo-400 rounded-lg transform rotate-6 transition duration-500 group-hover:rotate-0 group-hover:scale-100"></div>
+                <img
+                  src={project.imageUrl}
+                  alt={project.title}
+                  className="relative w-full h-full object-cover rounded-lg shadow-xl"
+                />
+              </div>
             </div>
-        </section>
-    );
+
+            {/* Project Details */}
+            <div
+              className={`md:col-span-7 z-10 ${index % 2 === 0 ? 'md:text-left' : 'md:text-right'}`}
+            >
+              <p className="text-indigo-400 mb-1 tracking-wide text-sm">Featured Project</p>
+              <h3 className="text-2xl md:text-3xl font-bold mb-2 text-white">
+                {project.title}
+              </h3>
+              <p className="text-gray-400 mb-3">{project.description}</p>
+
+              {/* Project Tags */}
+              <div className={`flex flex-wrap gap-3 ${index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'}`}>
+                {project.tags.map(tag => (
+                  <span key={tag} className="text-gray-400 text-sm">{tag}</span>
+                ))}
+              </div>
+
+              {/* Links */}
+              <div className={`flex items-center gap-4 mt-4 ${index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'}`}>
+                <a href={project.codeUrl} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-indigo-400 transition-colors"><Github size={24}/></a>
+                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-indigo-400 transition-colors"><ArrowRight size={24}/></a>
+              </div>
+            </div>
+
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+
+
+
+
 };
 
 
 // Section: Skills
 const SkillsSection = () => {
-    const skills = ["JavaScript (ES6+)", "TypeScript", "React", "Next.js", "Node.js", "Tailwind CSS", "HTML5", "CSS3", "Firebase", "Git & GitHub", "Figma", "REST APIs"];
+    const skills = ["React", "Node.js", "Tailwind CSS", "HTML", "CSS", "Java","JavaScript","Git & GitHub", "Figma","Jira", "Power BI "];
     
     return (
         <section id="skills" className="py-24 bg-gray-900">
@@ -490,8 +517,6 @@ const Footer = ({ onNavClick }) => (
                 <Mail size={24} />
             </a>
         </div>
-        <p className="text-gray-500">
-            Designed & Built by John Doe
-        </p>
+        
     </footer>
 );
