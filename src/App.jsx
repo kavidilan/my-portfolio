@@ -7,8 +7,7 @@ import CultureKart from './assets/CultureKart.png';
 import Top5AI from './assets/Top5AI.png';
 import spotify from './assets/spotify.png';
 import cyber from './assets/cyber.jpg';
-// --- Particle Animation Component ---
-// This creates the animated background for the hero section
+
 const ParticleCanvas = () => {
     const canvasRef = useRef(null);
 
@@ -286,33 +285,72 @@ const Header = ({ sections, activeSection, onNavClick, isMenuOpen, setIsMenuOpen
 };
 
 // Section: Home
-const HomeSection = ({onNavClick}) => (
-    <section id="home" className="min-h-screen flex items-center relative overflow-hidden">
-        <ParticleCanvas />
-        <div className="container mx-auto px-6 z-10">
-            <div className="max-w-3xl">
-                <p className="text-lg text-indigo-400 mb-2 fade-in" style={{animationDelay: '100ms'}}>Hi, my name is</p>
-                <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-4 fade-in" style={{animationDelay: '200ms'}}>
-                    Kavishka Dilshan.
-                </h1>
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-400 mb-8 fade-in" style={{animationDelay: '300ms'}}>
-                    I build things for the web.
-                </h2>
-                <p className="text-lg max-w-xl text-gray-400 mb-10 fade-in" style={{animationDelay: '400ms'}}>
-                    I'm passionate about technology and enjoy exploring how it can be used to solve real-world problems. I'm currently focused on learning web development and building meaningful, user-centered digital experiences.
-                </p>
-                <div className="fade-in" style={{animationDelay: '500ms'}}>
-                    <a
-                        href="#projects"
-                        onClick={(e) => {e.preventDefault(); onNavClick('projects')}}
-                        className="inline-flex items-center gap-2 bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-indigo-700 transition duration-300 text-lg shadow-lg transform hover:scale-105"
-                    >
-                        Check out my work <ArrowRight />
-                    </a>
-                </div>
-            </div>
+// Section: Home
+const HomeSection = ({ onNavClick }) => (
+  <section
+    id="home"
+    className="min-h-screen flex items-center justify-center relative overflow-hidden"
+  >
+    <ParticleCanvas />
+
+    <div className="container mx-auto px-6 z-10">
+      <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+        {/* --- LEFT SIDE: TEXT --- */}
+        <div className="max-w-2xl text-center md:text-left fade-in">
+          <p
+            className="text-lg text-indigo-400 mb-2"
+            style={{ animationDelay: '100ms' }}
+          >
+            Hi, my name is
+          </p>
+          <h1
+            className="text-5xl md:text-7xl font-extrabold text-white mb-4"
+            style={{ animationDelay: '200ms' }}
+          >
+            Kavishka Dilshan.
+          </h1>
+          <h2
+            className="text-3xl md:text-4xl font-bold text-gray-400 mb-8"
+            style={{ animationDelay: '300ms' }}
+          >
+            I build things for the web.
+          </h2>
+          <p
+            className="text-lg text-gray-400 mb-10"
+            style={{ animationDelay: '400ms' }}
+          >
+            I'm passionate about technology and enjoy exploring how it can be
+            used to solve real-world problems. I'm currently focused on learning
+            web development and building meaningful, user-centered digital
+            experiences.
+          </p>
+          <div style={{ animationDelay: '500ms' }}>
+            <a
+              href="#projects"
+              onClick={(e) => {
+                e.preventDefault();
+                onNavClick('projects');
+              }}
+              className="inline-flex items-center gap-2 bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-indigo-700 transition duration-300 text-lg shadow-lg transform hover:scale-105"
+            >
+              Check out my work <ArrowRight />
+            </a>
+          </div>
         </div>
-    </section>
+
+        {/* --- RIGHT SIDE: PHOTO --- */}
+        <div className="relative flex justify-center md:justify-end fade-in">
+          <div className="w-52 h-52 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-indigo-500 shadow-lg transform hover:scale-105 transition duration-500">
+            <img
+              src={myimage}
+              alt="Kavishka Dilshan"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 );
 
 
@@ -321,7 +359,7 @@ const AboutSection = () => (
     <section id="about" className="py-24 bg-gray-900">
         <div className="container mx-auto px-6">
             <h2 className="text-4xl font-bold text-center mb-16 text-white fade-in">
-                <span className="text-indigo-400">01.</span> About Me
+                 About Me
             </h2>
             <div className="grid lg:grid-cols-5 gap-12 items-center fade-in">
                 <div className="lg:col-span-3 text-lg text-gray-400 space-y-6">
@@ -341,17 +379,8 @@ const AboutSection = () => (
                         <li className="flex items-center gap-2"><ArrowRight className="w-4 h-4 text-indigo-400"/> Figma </li>
                     </ul>
                 </div>
-                <div className="lg:col-span-2 flex justify-center lg:justify-end">
-                    <div className="relative w-72 h-72 group">
-                        <div className="absolute inset-0 bg-indigo-600 rounded-lg transform transition duration-500 group-hover:rotate-6 group-hover:scale-105"></div>
-                        <div className="absolute inset-0 border-2 border-indigo-400 rounded-lg transform rotate-6 transition duration-500 group-hover:rotate-0 group-hover:scale-100"></div>
-                        <img 
-                            src={myimage} 
-                            alt="Kavishka Dilshan" 
-                            className="relative w-full h-full object-cover rounded-lg shadow-xl"
-                        />
-                    </div>
-                </div>
+               
+                
             </div>
         </div>
     </section>
@@ -391,7 +420,7 @@ return (
   <section id="projects" className="py-24 bg-gray-900/50">
     <div className="container mx-auto px-6">
       <h2 className="text-4xl font-bold text-center mb-16 text-white fade-in">
-        <span className="text-indigo-400">02.</span> Some Things I've Built
+         Some Things I've Built
       </h2>
       <div className="grid md:grid-cols-1 lg:grid-cols-1 gap-12">
         {projects.map((project, index) => (
@@ -478,7 +507,7 @@ const SkillsSection = () => {
         <section id="skills" className="py-24 bg-gray-900">
             <div className="container mx-auto px-6">
                 <h2 className="text-4xl font-bold text-center mb-16 text-white fade-in">
-                    <span className="text-indigo-400">03.</span> My Skills & Blogs
+                     My Skills & Blogs
                 </h2>
 
                 {/* Skills Grid */}
@@ -530,7 +559,7 @@ const ContactSection = () => {
         <section id="contact" className="py-24">
             <div className="container mx-auto px-6 max-w-2xl text-center fade-in">
                 <h2 className="text-4xl font-bold mb-4 text-white">
-                    <span className="text-indigo-400">04.</span> What's Next?
+                     What's Next?
                 </h2>
                 <h3 className="text-4xl font-bold text-white mb-4">Get In Touch</h3>
                 <p className="text-gray-400 mb-12 text-lg">
